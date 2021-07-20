@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="product-card">
+      <h1>Converse One Star</h1>
+      <p>Cool shoes from converse</p>
+      <div class="product-pic"></div>
+      <div class="product-colors">
+        <span class="blue active" data-color="#74b9ff" data-pic="url(img1.png)"></span>
+        <span class="yellow" data-color="#ffeaa7" data-pic="url(img2.png)"></span>
+        <span class="pink" data-color="#fab1a0" data-pic="url(img3.png)"></span>
+        <span class="navy" data-color="#30336b" data-pic="url(img4.png)"></span>
+      </div>
+      <div class="product-info">
+        <div class="product-price">$100</div>
+        <a href="#" class="product-button">Add To Cart</a>
+     </div>
+    </div>
+
+    <script>
+      $(".product-colors span").click(function(){
+        $(".product-colors span").removeClass("active");
+        $(this).addClass("active");
+        $("body").css("background",$(this).attr("data-color"));
+        $(".product-price").css("color",$(this).attr("data-color"));
+        $(".product-button").css("color",$(this).attr("data-color"));
+        $(".product-pic").css("background-image",$(this).attr("data-pic"));
+      });
+      </script>
+  </body>
+</html>
